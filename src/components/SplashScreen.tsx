@@ -72,7 +72,7 @@ const SplashScreen = () => {
                                 }}
                             />
                             {/* Fallback Initials */}
-                            <span className="hidden text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400">NG</span>
+                            <span className="hidden text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400">N</span>
                         </div>
                     </motion.div>
                 </div>
