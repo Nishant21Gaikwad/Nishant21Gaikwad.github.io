@@ -14,40 +14,44 @@ const SplashScreen = () => {
             <div className="relative z-10 flex flex-col items-center">
                 {/* Rectangle Border Animation replacing the circular ring */}
                 <div className="relative mb-10 p-4">
-                    {/* SVG Rectangular Tracing Path */}
+                    {/* SVG Rectangular Tracing Path - Half 1 */}
                     <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                         <rect
-                            x="2"
-                            y="2"
-                            width="98%"
-                            height="98%"
-                            rx="16"
-                            ry="16"
-                            fill="none"
-                            stroke="#1E3A8A" // Dark blue track
-                            strokeWidth="2"
+                            x="2" y="2" width="98%" height="98%" rx="16" ry="16"
+                            fill="none" stroke="#1E3A8A" strokeWidth="2"
                         />
                         <motion.rect
-                            x="2"
-                            y="2"
-                            width="98%"
-                            height="98%"
-                            rx="16"
-                            ry="16"
-                            fill="none"
-                            stroke="url(#glowGradient)"
-                            strokeWidth="4"
-                            strokeDasharray="0 1000"
-                            animate={{
-                                strokeDasharray: ["0 1000", "800 0"]
-                            }}
-                            transition={{ duration: 5, ease: "linear" }}
+                            x="2" y="2" width="98%" height="98%" rx="16" ry="16"
+                            fill="none" stroke="url(#glowGradient)" strokeWidth="4"
+                            pathLength="1"
+                            strokeDasharray="0 1"
+                            animate={{ strokeDasharray: ["0 1", "0.5 1"] }}
+                            transition={{ duration: 5, ease: "easeInOut" }}
                             className="drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
                         />
                         <defs>
                             <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#3B82F6" /> {/* primary */}
-                                <stop offset="100%" stopColor="#6EE7B7" /> {/* accent */}
+                                <stop offset="0%" stopColor="#3B82F6" />
+                                <stop offset="100%" stopColor="#6EE7B7" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    {/* SVG Rectangular Tracing Path - Half 2 (Rotated to start from opposite corner) */}
+                    <svg className="absolute inset-0 w-full h-full rotate-180" xmlns="http://www.w3.org/2000/svg">
+                        <motion.rect
+                            x="2" y="2" width="98%" height="98%" rx="16" ry="16"
+                            fill="none" stroke="url(#glowGradient)" strokeWidth="4"
+                            pathLength="1"
+                            strokeDasharray="0 1"
+                            animate={{ strokeDasharray: ["0 1", "0.5 1"] }}
+                            transition={{ duration: 5, ease: "easeInOut" }}
+                            className="drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"
+                        />
+                        <defs>
+                            <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#3B82F6" />
+                                <stop offset="100%" stopColor="#6EE7B7" />
                             </linearGradient>
                         </defs>
                     </svg>
